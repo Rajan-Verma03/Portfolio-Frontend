@@ -1,0 +1,22 @@
+.social-icons {
+  @include flex(space-between);
+  list-style: none;
+  width: 30%;
+  margin-top: 2rem;
+  padding: 1rem 0.2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 70%;
+  }
+
+  & li {
+    font-size: 2.5rem;
+    color: $primary-1;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $primary-4;
+      transform: scale(1.2);
+    }
+  }
+}

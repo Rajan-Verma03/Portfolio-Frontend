@@ -1,0 +1,124 @@
+.about {
+  background: $primary-light;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+  padding: 10rem 0rem 15.7rem 0rem;
+  transition: all 0.5s;
+  animation: moveOut 0.4s;
+
+  @media only screen and (max-width: $bp-small) {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  }
+
+  &-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
+
+  &-title {
+    width: fit-content;
+
+    & h2 {
+      font-size: 5rem;
+      color: $primary-1;
+      text-transform: capitalize;
+      letter-spacing: 0.4rem;
+    }
+
+    & .underline {
+      width: 10rem;
+      background: $primary-1;
+    }
+  }
+
+  &-me {
+    margin-top: 3rem;
+
+    & ul {
+      list-style: none;
+      @include flex(flex-end);
+      flex-wrap: wrap;
+
+      & li {
+        flex: 0 0 50%;
+        font-size: 1.6rem;
+        margin: 1rem 0rem;
+        color: $primary-1;
+        font-weight: 500;
+
+        @media only screen and (max-width: $bp-small) {
+          flex: 0 0 100%;
+        }
+
+        & span {
+          font-weight: 600;
+          margin-right: 0.4rem;
+        }
+
+        & a {
+          text-decoration: none;
+          color: $primary-1;
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 1rem;
+          width: 1rem;
+          margin-right: 0.7rem;
+
+          // Older browsers
+          background-image: url("../assets/images/rightArrow.svg");
+          background-size: cover;
+
+          //Newer browsers - masks
+          @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: $secondary-dark;
+            -webkit-mask-image: url("../assets/images/rightArrow.svg");
+            -webkit-mask-size: cover;
+            mask-image: url("../assets/images/rightArrow.svg");
+            mask-size: cover;
+          }
+        }
+      }
+    }
+
+    & p {
+      margin-top: 3rem;
+      font-size: 1.6rem;
+      line-height: 2.5rem;
+      color: $primary-1;
+      font-weight: 500;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 12%;
+        height: 70%;
+        position: absolute;
+        top: -1.4rem;
+        left: -2rem;
+        border-top: 0.7rem solid $primary-1;
+        border-left: 0.7rem solid $primary-1;
+
+        @media only screen and (max-width: $bp-small) {
+          width: 40%;
+        }
+      }
+      &::after {
+        content: "";
+        width: 12%;
+        height: 70%;
+        position: absolute;
+        bottom: -1rem;
+        right: -1rem;
+        border-bottom: 0.7rem solid $primary-1;
+        border-right: 0.7rem solid $primary-1;
+
+        @media only screen and (max-width: $bp-small) {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

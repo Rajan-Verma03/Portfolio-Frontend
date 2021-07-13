@@ -1,0 +1,71 @@
+.sidebar {
+  width: 60%;
+  height: 40rem;
+  margin: auto;
+  @include flex(center);
+  flex-direction: column;
+
+  &-btn {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+
+    & svg {
+      color: $secondary-light;
+      font-size: 2.5rem;
+    }
+  }
+
+  &-links {
+    & li {
+      list-style: none;
+      margin: 4rem auto;
+      position: relative;
+      text-align: center;
+      padding: 0.4rem 1.5rem;
+      text-transform: capitalize;
+
+      &::after,
+      &::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 0.1rem;
+        transition: all 0.7s;
+        background-color: $secondary-dark;
+      }
+
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+      &:hover::after {
+        transform-origin: left;
+      }
+      &::before {
+        top: 0;
+        right: 0;
+      }
+      &:hover::before {
+        transform-origin: right;
+      }
+      &:hover::after,
+      &:hover::before {
+        width: 30%;
+        transform: rotate(-70deg);
+        background-color: $secondary-light;
+      }
+
+      &:first-child {
+        padding: 0.4rem 0rem;
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      font-size: 2rem;
+      color: $primary-light;
+    }
+  }
+}

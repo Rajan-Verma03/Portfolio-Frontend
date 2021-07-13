@@ -1,0 +1,97 @@
+.navbar {
+  background: transparent;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+
+  &--container {
+    width: 85%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    @include flex(flex-end);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+
+  &--btn {
+    display: none;
+
+    @media only screen and (max-width: $bp-small) {
+      display: inline-block;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    & svg {
+      font-size: 2.2rem;
+      color: $primary-light;
+    }
+  }
+
+  &--links {
+    @include flex(space-between);
+    padding: 2rem 1rem;
+    list-style: none;
+
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+
+    &_li {
+      margin: 0 1.6rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.3rem;
+      font-size: 2rem;
+      position: relative;
+
+      & a {
+        text-decoration: none;
+        color: $primary-light;
+        text-transform: capitalize;
+      }
+
+      &:hover a {
+        color: $primary-9;
+      }
+
+      &::after,
+      &::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 0.1rem;
+        transition: all 0.7s cubic-bezier(0.94, 0.08, 0.2, 1.06);
+        background-color: $primary-9;
+      }
+
+      &:hover::after,
+      &:hover::before {
+        width: 40%;
+        transform: rotate(-70deg);
+        background-color: $primary-8;
+      }
+
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+
+      &:hover::after {
+        transform-origin: left;
+      }
+
+      &::before {
+        top: 0;
+        right: 0;
+      }
+
+      &:hover::before {
+        transform-origin: right;
+      }
+    }
+  }
+}

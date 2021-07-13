@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-small) {
+    font-size: 55%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  background: $primary-1;
+}
+
+// About Main
+.about-main {
+  // @include flex(center);
+  // flex-direction: column;
+  padding-top: 3rem;
+}

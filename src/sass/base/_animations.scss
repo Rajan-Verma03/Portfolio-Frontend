@@ -1,0 +1,54 @@
+// .firstAnime {
+//   width: 100%;
+//   height: 66.5rem;
+//   background-color: antiquewhite;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 99999;
+//   animation: moveOut 3s;
+//   transform: translateY(-100%);
+// }
+
+@keyframes moveOut {
+  0% {
+    transform: translateX(180%);
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: translateX(0%);
+    transform-origin: 100% 0;
+  }
+}
+@keyframes moveIn {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: perspective(200);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// .secondAnime {
+//   width: 100%;
+//   height: 66.5rem;
+//   background-color: black;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   clip-path: polygon(0 0%, 100% 0%, 100% 78%, 25% 91%);
+//   z-index: 99998;
+//   animation: moveIn 3s linear 2.3s;
+//   transform: translateX(-100%);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+.secondAnime h1 {
+  color: white;
+  font-size: 4.5rem;
+  display: none;
+}
